@@ -1,0 +1,27 @@
+{## CATC: productFamily=Switches and Hubs, softwareType=IOS-XE, productSeries=Cisco Catalyst 9000 Series Virtual Switches ##}
+{% set DEFN_LOOP_UNDERLAY =
+    {
+      'Alpine-Border1.sdatme.com':   '30.1.0.81',
+      'Alpine-Edge1.sdatme.com':     '30.1.0.82'
+    }
+%}
+{# DEFN_LOOP_MCLUSTER: remote Border peers for cross-site VXLAN multi-cluster BGP  #}
+{# Keys = remote border hostnames; values = their Loopback0 IP and remote site ASN  #}
+{# Iterate via DEFN_NODE_ROLES['MCLUSTER'] list in FABRIC templates                 #}
+{% set DEFN_LOOP_MCLUSTER =
+    {}
+%}
+{% set DEFN_LOOP_OVERLAY =
+    {
+      'red':                                    '198.18.100.',
+      'blue':                                   '198.18.200.',
+      'green':                                  '198.18.220.'
+    }
+%}
+{% set DEFN_LOOP_NAME =
+    {
+        'UNDERLAY': 'Loopback0',
+        'ANYCAST':  'Loopback2'
+    }
+%}
+{# End of File #}
